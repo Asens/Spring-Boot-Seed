@@ -18,3 +18,23 @@ Hibernate,using spring-boot-starter-data-jpa
 Using interface by default , and make Custom*Dao interface and *DaoImpl to extend the function not apply
 
     
+### Get Start
+The seed project is made by maven,I recommend you to use IDEA,you can import the project eazily,and of course you can you maven
+There is somthing you need to change or config to get start
+at /src/main/resources/application.properties ,this is the main properties of the project , you may want to change
+
+spring.datasource.url=jdbc:mysql://localhost:3306/YOUR_DATA_BASE
+spring.datasource.username=USERNAME
+spring.datasource.password=PASSWORD
+server.port=801
+
+I use active propfile to choose develop/production properties,both properties has set logging.config to a config of log4j2 just like
+    logging.config=classpath:config/log4j2-develop.xml
+I made for my own,it's great,but you may want to change the config ,especially 
+    <Property name="LOG_HOME">D://logs</Property>
+
+
+It's very little now,but it works well,you can add anything you want.
+
+I'll add some User management,pregister,login,roles,permissions,Admin management,statistics in the future 
+
