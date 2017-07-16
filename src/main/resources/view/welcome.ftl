@@ -1,6 +1,9 @@
 <html>
+<script type="text/javascript" src="/jquery/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="/layer/layer.js"></script>
 
 <title>Welcome</title>
+
 <style>
     html,body{
         background-color: #f4f4f4;
@@ -56,7 +59,7 @@
         <p>Hibernate,using spring-boot-starter-data-jpa </p>
         <p>use interface by default , and make Custom*Dao interface and *DaoImpl to extend the function not apply</p>
     </div>
-
+    <script>layer.msg("Welcome");</script>
 </div>
 </body>
 </html>
