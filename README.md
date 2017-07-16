@@ -2,19 +2,19 @@
 Spring-Boot seed ,use it to easily start a new project. Choose log4j2, freemarker and hibernate ,make it BEST PRACTICE
 
 ### Get Start
-The seed project is made by maven,I recommend you to use IDEA,you can import the project eazily,and of course you can you maven
-</br>There is somthing you need to change or config to get start
-</br>at /src/main/resources/application.properties ,this is the main properties of the project , you may want to change
+   The seed project is made by maven,I recommend you to use IDEA,you can import the project eazily,and of course you can you maven
+</br>   There is somthing you need to change or config to get start
+</br>   at /src/main/resources/application.properties ,this is the main properties of the project , you may want to change
 
 </br>spring.datasource.url=jdbc:mysql://localhost:3306/YOUR_DATA_BASE 
 </br>spring.datasource.username=USERNAME
 </br>spring.datasource.password=PASSWORD
 </br>server.port=801
 </br>
-I use active propfile to choose develop/production properties,both properties has set logging.config to a config of log4j2 just like
+   I use active propfile to choose develop/production properties,both properties has set logging.config to a config of log4j2 just like
     logging.config=classpath:config/log4j2-develop.xml
 </br>
-I made for my own,it's great,but you may want to change the config ,especially 
+   I made for my own,it's great,but you may want to change the config ,especially 
     <Property name="LOG_HOME">D://logs</Property>
 
 
