@@ -33,7 +33,7 @@
     </div>
 
     <div class="row left">
-        <p>your freeMarker config is
+        <p>Hello, ${(user.name)!} your freeMarker config is
         [#if freeMarker??]<span style="color: green">right</span>
         [#else]<span style="color: red">wrong</span>
         [/#if], </p>

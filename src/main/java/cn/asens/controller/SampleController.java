@@ -1,5 +1,7 @@
 package cn.asens.controller;
 
+import cn.asens.dao.UserDao;
+import cn.asens.entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +22,14 @@ public class SampleController {
 
     private String name;
 
+    @Autowired
+    private UserDao userDao;
 
     @RequestMapping("/")
     String home(ModelMap model) {
+        User user=userDao.findByaaId();
         model.put("freeMarker","freeMarker");
+        model.put("user",user);
         return "welcome";
     }
 
