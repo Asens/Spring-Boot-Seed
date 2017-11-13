@@ -1,32 +1,47 @@
 package cn.asens.dao.impl;
 
-import cn.asens.dao.CustomUserDao;
 import cn.asens.dao.UserDao;
 import cn.asens.entity.User;
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.support.JpaEntityInformation;
-import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import java.util.List;
 
 /**
  * Created by Asens on 2017/7/16
  */
 
 @Repository
-@Transactional
-public class UserDaoImpl extends BaseDaoImpl implements CustomUserDao {
+public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
 
     @Override
-    public User findByaaId() {
-        return (User)getSession().createQuery("select u from User u where u.id=1")
+    public void save(User user) {
+        getSession().save(user);
+    }
+
+    @Override
+    public User findByUsername(String name) {
+        return (User)getSession().createQuery("from User bean where bean.username=:name")
+                .setParameter("name",name)
+                .setMaxResults(1)
+                .uniqueResult();
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<User> getList() {
+        return getSession().createQuery("from User").list();
+    }
+
+    @Override
+    public void update(User user) {
+        getSession().update(user);
+    }
+
+    @Override
+    public User findByEmail(String email) {
+        return (User)getSession().createQuery("from User bean where bean.email=:email")
+                .setParameter("email",email)
+                .setMaxResults(1)
                 .uniqueResult();
     }
 }
